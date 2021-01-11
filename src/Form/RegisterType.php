@@ -49,7 +49,8 @@ class RegisterType extends AbstractType
                         'min' => 2,
                         'max' => 60,
                     ]),
-                ],                'attr' => [
+                ],                
+                'attr' => [
                     'placeholder' => 'saisir votre adresse email'
                 ]
             ])
@@ -59,8 +60,18 @@ class RegisterType extends AbstractType
                 'invalid_message' => 'Les mots de passe doivent être identiques.',
                 'label' => 'Mot de passe',
                 'required' => true,
-                'first_options' => [ 'label' => 'Mot de passe' ],
-                'second_options' => [ 'label' => 'Confirmer le mot de passe' ]
+                'first_options' => [
+                    'label' => 'Mot de passe',
+                    'attr' => [
+                        'placeholder' => 'saisir un mot de passe'
+                    ]
+                ],
+                'second_options' => [
+                    'label' => 'Confirmer le mot de passe',
+                    'attr' => [
+                        'placeholder' => 'confirmer le mot de passe'
+                    ]
+                ]
             ])
             ->add('submit', SubmitType::class, [
                 'label' => "S'enregistrer"
