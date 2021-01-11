@@ -4,6 +4,10 @@
 
 {% block content %}
     <h1>Mon compte</h1>
-    Bienvenue ... Dans cet espace pour allez pouvoir gérer toutes vos informations personnelles.
-
+    Bienvenue {{app.user.firstname}}!<br/>Dans cet espace pour allez pouvoir gérer toutes vos informations personnelles.
+    <br/><br/>
+    - Modifier mon mot de passe<br/>
+    - Modifier mes adresses<br/>
+    - Consulter mes livraisons<br/>
+    
 {% endblock %}
