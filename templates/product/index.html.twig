@@ -3,6 +3,14 @@
 {% block title %}Nos produits - La boutique Lomo{% endblock %}
 
 {% block content %}
-<h1>Nos produits</h1>
-Les produits ici.
+    <h1>Nos produits</h1>
+
+    <div class="row">
+        {% for product in products%}
+            <div class="col-md-4">
+                {{ dump(product) }}
+            </div>
+
+        {% endfor %}
+    </div>
 {% endblock %}
