@@ -13,3 +13,23 @@
 .footer__style a {
     color: #999;
 }
+
+.product__item-style{
+    margin-top: 5em;
+}
+
+.product__item-style h4 {
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-top: 1em;
+}
+.product__subtitle {
+    display:block;
+
+    margin-bottom: 2em;
+
+}
+
+.product__price {
+    font-weight: bold;
+}
