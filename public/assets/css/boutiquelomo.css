@@ -1,17 +1,25 @@
+body {
+    position: relative;
+}
+
 .navbar__connexion-style, .navbar__connexion-style a {
     color: #fff;
 }
 
 .footer__style {
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     background-color: #e6e6e6;
-    padding: 1em 1em 0.25em 1em;
+    padding: 1em 1em 0.05em 1em;
 }
 
 .footer__style a {
     color: #999;
+}
+
+.product__container{
+    margin-bottom: 5em;
 }
 
 .product__item-style{
