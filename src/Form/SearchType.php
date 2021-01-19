@@ -6,6 +6,7 @@ use App\Classe\Search;
 use App\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,7 +20,8 @@ class SearchType extends AbstractType
                 'label' => false,
                 'required' => false,
                 'attr' => [
-                    'placeholder' => "votre recherche"
+                    'placeholder' => "votre recherche",
+                    'class' => "form-control-sm"
                 ]
             ])
 
@@ -29,7 +31,14 @@ class SearchType extends AbstractType
                 'class' => Category::class,
                 'multiple' => true,
                 'expanded' => true
-            ]);
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => "Filtrer",
+                'attr' => [
+                    'class' => "btn-primary btn-block"
+                ]
+            ])
+        ;
     }    
 
     public function configureOptions(OptionsResolver $resolver)
