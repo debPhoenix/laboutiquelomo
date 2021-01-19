@@ -3,19 +3,28 @@
 {% block title %}Nos produits - La boutique Lomo{% endblock %}
 
 {% block content %}
-    <h1>Nos produits</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Filtrer</h2>
+            {{ form(form) }}
+        </div>
 
-    <div class="row product__container">
-        {% for product in products %}
-            <div class="col-md-4">
-                <div class="product__item-style text-center">
-                    <a href="{{ path('product', { 'slug' : product.slug}) }}"><img src="/uploads/{{ product.illustration }}" class="img-fluid" alt="{{ product.name }}"></a>
-                    <h4>{{ product.name }}</h4>
-                    <span class="product__subtitle">{{ product.subtitle }}</span>
-                    <span class="product__price">{{ (product.price /100) | number_format(2, ',', '.') }} €</span>
-                </div>
+        <div class="col-md-9">
+            <h2>Nos produits</h2>
+            <div class="row product__container">
+                {% for product in products %}
+                    <div class="col-md-4">
+                        <div class="product__item-style text-center">
+                            <a href="{{ path('product', { 'slug' : product.slug}) }}"><img src="/uploads/{{ product.illustration }}" class="img-fluid" alt="{{ product.name }}"></a>
+                            <h4>{{ product.name }}</h4>
+                            <span class="product__subtitle">{{ product.subtitle }}</span>
+                            <span class="product__price">{{ (product.price /100) | number_format(2, ',', '.') }} €</span>
+                        </div>
+                    </div>
+
+                {% endfor %}
             </div>
-
-        {% endfor %}
+        </div>
     </div>
+
 {% endblock %}
