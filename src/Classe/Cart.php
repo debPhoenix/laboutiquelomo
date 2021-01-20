@@ -15,12 +15,15 @@ class Cart
 
     public function add($id)
     {
-        $this->session->set('cart',[
-            [
-                'id' => $id,
-                'quantity' => 1
-            ]
-        ]);
+        $cart = $this->session->get('cart', []);
+
+        if (!empty($cart[$id])){
+            $cart[$id]++;
+        } else {
+            $cart[$id] = 1;
+        }
+
+        $this->session->set('cart', $cart);
     }
 
     public function get()
