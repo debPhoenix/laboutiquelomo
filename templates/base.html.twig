@@ -50,6 +50,7 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
             </ul>
+            <a href="{{ path('cart') }}"><img src="{{ asset('assets/img/panier.svg') }}" alt="Panier" class="panier-style"></a>
             <div class="navbar__connexion-style">
             {% if app.user %}
             <a href="{{ path('account') }}">Mon compte ({{ app.user.firstname }})</a> ∙ <a href="{{ path('app_logout') }}">Déconnexion</a>
