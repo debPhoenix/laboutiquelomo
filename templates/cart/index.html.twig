@@ -29,9 +29,17 @@
                         {{ product.product.name }}<br/>
                         <small>{{ product.product.subtitle }}</small>
                     </th>
-                    <td>x {{ product.quantity }}</td>
-                    <td>{{ (product.product.price /100) | number_format(2, ',', '.') }} €</td>
-                    <td>{{ ((product.product.price * product.quantity ) /100) | number_format(2, ',', '.') }} €</td>
+                    <td>
+                        <a href="{{ path('decrease_to_cart' , { 'id' : product.product.id }) }}">
+                            <img src="{{ asset('assets/img/minus.svg') }}" height="15px" alt="suprimmer un produit">
+                        </a>
+                        x {{ product.quantity }}
+                        <a href="{{ path('add_to_cart' , { 'id' : product.product.id }) }}">
+                            <img src="{{ asset('assets/img/add.svg') }}" height="15px" alt="ajouter un produit">
+                        </a>
+                    </td>
+                    <td>{{ (product.product.price /100) | number_format(2, ',', '.') }}€</td>
+                    <td>{{ ((product.product.price * product.quantity ) /100) | number_format(2, ',', '.') }}€</td>
                     <td>
                         <a href="{{ path('delete_to_cart', { 'id' : product.product.id }) }}">
                         <img src="{{ asset('assets/img/trash.svg') }}" height="18px" alt="supprimer">
@@ -43,8 +51,8 @@
             </tbody>
         </table>
         <div class="text-right mb-5">
-            <b>Nombre de produit: {{ cart | length}} </b><br/>
-            <b>Total de mon panier: {{ (total /100) | number_format(2, ',', '.') }} €</b><br/>
+            Nombre de produit: <b>{{ cart | length}} </b><br/>
+            Total de mon panier: <b>{{ (total /100) | number_format(2, ',', '.') }}€</b><br/>
             <a href="#" class="btn btn-success mt-3">Valider mon panier</a>
         </div>
     {% else %}
