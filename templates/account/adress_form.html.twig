@@ -3,7 +3,7 @@
 {% block title %}Ajouter une adresse - La boutique Lomo{% endblock %}
 
 {% block content %}
-    <h1>Ajouter une adresse</h1>
+    <h1>Gérer mes adresses</h1>
     <br/><br/>
 
     {{ form_start(form) }}
@@ -21,5 +21,5 @@
     {{ form_end(form) }}
 
     <br/><br/>
-    <a href="{{ path('account') }}">Retourner à mon compte</a><br/>
+    <a href="{{ path('account_address') }}">Retourner à mes adresses</a><br/>
 {% endblock %}

@@ -18,12 +18,12 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ adress.name }}</h5>
                             <p class="card-text">
-                                {{ adress.adress }},<br/>
+                                {{ adress.adress }}<br/>
                                 {{ adress.postal }} {{ adress.city }}<br/>
                                 {{ adress.country }}
                             </p>
-                            <a href="#" class="btn btn-outline-primary btn-sm">Modifier</a> 
-                            <a href="#" class="btn btn-outline-danger btn-sm">Supprimer</a>
+                            <a href="{{ path('account_address_edit', {'id' : adress.id}) }}" class="btn btn-outline-primary btn-sm">Modifier</a> 
+                            <a href="{{ path('account_address_delete', {'id' : adress.id}) }}" class="btn btn-outline-danger btn-sm">Supprimer</a>
                         </div>
                     </div>
                 </div>
