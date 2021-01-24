@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes adresses - La boutique Lomo{% endblock %}
+
+{% block content %}
+    <a href="#" class="btn btn-primary btn-sm float-right">Ajouter une adresse</a>
+    <h1>Gérer mes adresses</h1>
+    Dans cet espace pour allez pouvoir gérer toutes vos adresses.
+    <br/><br/>
+    {% if app.user.adresses | length == 0 %}
+        Vous n'avez pas encore ajouté d'adresse à votre compte.<br/>
+        Pour en ajouter une <a href="#">cliquez ici</a>.
+    {% endif %}
+    <br/><br/>
+    <a href="{{ path('account') }}">Retourner à mon compte</a><br/>
+{% endblock %}
