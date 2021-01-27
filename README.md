@@ -1,10 +1,12 @@
 # LA BOUTIQUE LOMO
-https://img.shields.io/badge/contains-257%20coffee%20cups-blue
+(https://img.shields.io/badge/contains-257%20coffee%20cups-blue)
 
 Application web e-commerce.
 
 ## INITIALISATION
-* modifier le fichier .env
+Modifier le fichier:
+* .env
+
 Puis executer les commander suivantes:
 * ``composer install``
 * ``php/bin console d:d:c``
