@@ -1,5 +1,6 @@
 # LA BOUTIQUE LOMO
-(https://img.shields.io/badge/contains-257%20coffee%20cups-blue)
+
+[![Generic badge](https://img.shields.io/badge/contains-257%20coffee%20cups-blue.svg)](https://coffeegeek.co/)
 
 Application web e-commerce.
 
