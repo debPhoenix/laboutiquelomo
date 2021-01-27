@@ -1,6 +1,7 @@
 # LA BOUTIQUE LOMO
 
 Application web e-commerce.
+
 [![Generic badge](https://img.shields.io/badge/contains-257%20coffee%20cups-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/this%20is-sparta-red.svg)](https://shields.io/)
 
 ## INITIALISATION
