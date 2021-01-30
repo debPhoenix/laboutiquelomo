@@ -8,11 +8,20 @@
 
 <div class="row mt-5">
     <div class="col-md-6">
-        Mon adresse de livraison<br/>
-        Mon transporteur
+        <b>Adresse de livraison</b><br/>
+        <div class="form-check">
+            {{ delivery|raw }}<br/>
+        </div>
+        <hr>
+        <b>Mode de livraison</b><br/>
+        <div class="form-check">
+            {{ carrier.name }}<br/>
+            {{ carrier.description }}<br/>
+            {{ carrier.price | number_format(2, ',', '.') }}€
+        </div>
     </div>
     <div class="col-md-6">
-        <b>Récapitulatif de ma commande</b><br/>
+        <b>Ma commande</b><br/>
         <div class="mt-2">
             {% set total = null %}
             {% for key,product in cart %}
@@ -40,7 +49,7 @@
         <b>Livraison: {{ (carrier.price) | number_format(2, ',', '.') }}€</b><br/>
         <b>Total: {{ ((total /100) + carrier.price) | number_format(2, ',', '.') }}€</b><br/>
         <hr>
-        <a href="#" class="btn btn-success mt-3">Payer</a>
+        <a href="#" class="btn btn-success mt-3">Payer {{ ((total /100) + carrier.price) | number_format(2, ',', '.') }}€</a>
     </div>
 </div>
 {% endblock %}
