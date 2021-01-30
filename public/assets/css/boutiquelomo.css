@@ -46,3 +46,13 @@ body {
     height: 20px;
     padding-right: 20px;
 }
+
+.form-check {
+    background-color: #ddf5fd;
+    padding: 1em 2em;
+    margin-top: 0.5em;
+}
+
+.col-form-label{
+    font-weight: bold;
+}
