@@ -9,7 +9,7 @@
 <div class="row mt-5">
     <div class="col-md-6">
         <b>Adresse de livraison</b><br/>
-        <div class="form-check">
+        <div class="form-check mt-1">
             {{ delivery|raw }}<br/>
         </div>
         <hr>
@@ -45,9 +45,9 @@
             {% endfor %}
         </div>
         <hr>
-        <b>Sous-total: {{ (total /100) | number_format(2, ',', '.') }}€</b><br/>
-        <b>Livraison: {{ (carrier.price) | number_format(2, ',', '.') }}€</b><br/>
-        <b>Total: {{ ((total /100) + carrier.price) | number_format(2, ',', '.') }}€</b><br/>
+        <b>Sous-total:</b> {{ (total /100) | number_format(2, ',', '.') }}€<br/>
+        <b>Livraison:</b> {{ (carrier.price) | number_format(2, ',', '.') }}€<br/>
+        <b>Total:</b> {{ ((total /100) + carrier.price) | number_format(2, ',', '.') }}€<br/>
         <hr>
         <a href="#" class="btn btn-success mt-3">Payer {{ ((total /100) + carrier.price) | number_format(2, ',', '.') }}€</a>
     </div>
