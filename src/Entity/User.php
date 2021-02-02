@@ -141,6 +141,12 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
+    // permet l'affichage du nom et prenom dans easyadmin
+    public function getFullName(): string 
+    {
+        return $this->getFirstname().' '.$this->getLastname();
+    }
+
     public function getFirstname(): ?string
     {
         return $this->firstname;
