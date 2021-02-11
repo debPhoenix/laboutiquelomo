@@ -3,8 +3,6 @@
 {% block title %}{{ product.name }} - La boutique Lomo{% endblock %}
 
 {% block content %}
-
-
     <div class="row">
         <div class="col-md-5">
              <img src="/uploads/{{ product.illustration }}" class="img-fluid" alt="{{ product.name }}">
@@ -18,6 +16,15 @@
             <p>{{ product.description }}</p>
             <a href="{{ path('add_to_cart', {'id' : product.id})}}" class="btn btn-primary mb-5">Ajouter au panier</a>
         </div>
-
     </div>
+    <hr>
+    <h3>Les produits préférés du moment</h3>
+    <p>Découvrez les articles les plus vendus.</p>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-4">
+                {% include 'product/single_product.html.twig' %}
+                </div>
+            {% endfor %}
+        </div>
 {% endblock %}
