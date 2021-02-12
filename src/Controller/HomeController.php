@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Hero;
 use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,8 +24,11 @@ class HomeController extends AbstractController
     {
         $products = $this->entityManager->getRepository(Product::class)->findByIsBest(1);
 
+        $hero = $this->entityManager->getRepository(Hero::class)->findAll();
+
         return $this->render('home/index.html.twig', [
-            'products' => $products
+            'products' => $products,
+            'heros' => $hero
         ]);
     }
 }

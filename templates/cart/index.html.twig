@@ -7,6 +7,7 @@
     Voici le contenu de votre panier!
 
     {% if cart | length > 0 %}
+
         <table class="table mt-5">
             <thead>
                 <tr>
@@ -50,6 +51,7 @@
             {% endfor %}    
             </tbody>
         </table>
+
         <div class="text-right mb-5">
             Nombre de produit: <b>{{ cart | length}} </b><br/>
             Total de mon panier: <b>{{ (total /100) | number_format(2, ',', '.') }}€</b><br/>
