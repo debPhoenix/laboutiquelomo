@@ -3,17 +3,17 @@
 {% block title %}Paiement de la commande - La boutique Lomo {% endblock %}
 
 {% block content %}
-<h2>Récapitulatif de ma commande</h2>
-<p>Verifier vos informations avant de régler votre commande.</p>
+<h1>Récapitulatif de ma commande</h1>
+<p class="lead">Verifier vos informations avant de régler votre commande.</p>
 
 <div class="row mt-5">
     <div class="col-md-6">
-        <b>Adresse de livraison</b><br/>
+        <p class="lead">Adresse de livraison</p>
         <div class="form-check mt-1">
             {{ delivery|raw }}<br/>
         </div>
         <hr>
-        <b>Mode de livraison</b><br/>
+        <p class="lead">Mode de livraison</p>
         <div class="form-check">
             {{ carrier.name }}<br/>
             {{ carrier.description }}<br/>
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="col-md-6">
-        <b>Ma commande</b><br/>
+        <p class="lead">Ma commande</p>
         <div class="mt-2">
             {% set total = null %}
             {% for key,product in cart %}
@@ -29,27 +29,29 @@
                 <div class="col-2 mt-2">
                     <img src="/uploads/{{ product.product.illustration }}" alt="{{ product.product.name }}" height="75px">
                 </div>
-                <div class="col-8 my-auto">
-                    {{ product.product.name }}<br/>
-                        <small>
-                        {{ product.product.subtitle }}
-                        <br/>
-                        x {{ product.quantity }}
-                        </small>
+                <div class="col-8 my-auto pl-5">
+                <p class="lead">
+                    {{ product.product.name }} x {{ product.quantity }}
+                </p>
                 </div>
                 <div class="col-2 my-auto">
-                    {{ ((product.product.price * product.quantity ) /100) | number_format(2, ',', '.') }}€
+                    <p class="lead">
+                    {{ ((product.product.price * product.quantity ) /100) | number_format(2, ',', '.') }} €
+                    </p>
                 </div>
             </div>
             {% set total = total + (product.product.price * product.quantity ) %}
             {% endfor %}
         </div>
         <hr>
-        <b>Sous-total:</b> {{ (total /100) | number_format(2, ',', '.') }}€<br/>
-        <b>Livraison:</b> {{ (carrier.price) | number_format(2, ',', '.') }}€<br/>
-        <b>Total:</b> {{ ((total /100) + carrier.price) | number_format(2, ',', '.') }}€<br/>
+        <div class="text-right">
+        <p class="lead">Sous-total: {{ (total /100) | number_format(2, ',', '.') }} €<br/>
+        Livraison: {{ (carrier.price) | number_format(2, ',', '.') }} €<br/>
+        Total: {{ ((total /100) + carrier.price) | number_format(2, ',', '.') }} €<br/>
+        </p>
         <hr>
-        <a href="#" class="btn btn-success mt-3">Payer {{ ((total /100) + carrier.price) | number_format(2, ',', '.') }}€</a>
+        <a href="#" class="btn btn-success mt-3 btn-lg">Payer {{ ((total /100) + carrier.price) | number_format(2, ',', '.') }} €</a>
+        </div>
     </div>
 </div>
 {% endblock %}

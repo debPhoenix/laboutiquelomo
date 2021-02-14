@@ -21,7 +21,10 @@ class SearchType extends AbstractType
                 'required' => false,
                 'class' => Category::class,
                 'multiple' => true,
-                'expanded' => true
+                'expanded' => true,
+                'attr'=> [
+                    'class' => 'lead'
+                ]
             ])
             ->add('submit', SubmitType::class, [
                 'label' => "Filtrer",

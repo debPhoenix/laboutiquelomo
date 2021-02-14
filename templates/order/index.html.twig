@@ -3,34 +3,32 @@
 {% block title %}Valider la commande - La boutique Lomo {% endblock %}
 
 {% block content %}
-<h2>Je passe ma commande</h2>
-<p>Choississez vos préférences avant de valider votre commande.</p>
+<h1>Je passe ma commande</h1>
+<p class="lead">Choississez vos préférences avant de valider votre commande.</p>
 
 <div class="row mt-5">
     <div class="col-md-6">
         {% set formHtml %}
             {{ form_start(form, {action:path('order_recap')}) }}
-                {{ form_label(form.addresses, 'Choisissez l\'adresse de livraison') }}
+                <p class="lead">{{ form_label(form.addresses, 'Choisissez votre adresse de livraison') }}</p>
                 <a href="{{ path('account_address_add') }}">Ajouter une nouvelle adresse</a>
             {{ form_end(form) }}
         {% endset %}
-
         {{ formHtml|replace({'[br]' : '<br/>'})|raw}}
     </div>
     <div class="col-md-6">
-        <b>Récapitulatif de ma commande</b><br/>
+        <p class="lead">Récapitulatif de votre commande</p>
         <div class="m-1">
             {% for key,product in cart %}
             <div class="row {% if key > 0%}mt-2{% endif %}">
                 <div class="col-2 mt-2">
                     <img src="/uploads/{{ product.product.illustration }}" alt="{{ product.product.name }}" height="75px">
                 </div>
-                <div class="col-8 my-auto">
-                        {{ product.product.name }}<br/>
-                        <small>{{ product.product.subtitle }}</small>
+                <div class="col-8 my-auto pl-5">
+                    <p class="lead">{{ product.product.name }}</p>
                 </div>
                 <div class="col-2 my-auto">
-                    x {{ product.quantity }}
+                    <p class="lead">x {{ product.quantity }}</p>
                 </div>
             </div>
             {% endfor %}

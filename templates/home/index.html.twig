@@ -3,43 +3,42 @@
 {% block carousel %}{% endblock %}
 
 {% block content %}
-    <h3>Les produits préférés du moment</h3>
-    <p>Découvrez les articles les plus vendus.</p>
-        <div class="row">
-            {% for product in products %}
-                <div class="col-md-4">
-                {% include 'product/single_product.html.twig' %}
-                </div>
-            {% endfor %}
+<h1>Les produits du moment</h1>
+<span class="lead">Découvrez les articles les plus vendus.</span>
+<hr>
+<div class="row">
+    {% for product in products %}
+        <div class="col-md-4">
+        {% include 'product/single_product.html.twig' %}
         </div>
+    {% endfor %}
+</div>
 
 
-    <!-- START THE FEATURETTES -->
+<!-- START THE FEATURETTES -->
+<hr class="featurette-divider">
 
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-            </div>
+<div class="row featurette">
+    <div class="col-md-7 ">
+        <h2 class="featurette-heading">Les 10 règles d'or <span class="text-muted">de la lomographie.</span></h2>
+        <p class="lead">Parmi les 10 Règles d'Or de Lomography, il y a "Ne pensez pas, photographiez" (Don’t Think, Just Shoot). Cette phrase résume à elle seule l'essence même de notre philosophie. Alors retenez-la bien !</p>
     </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-            </div>
+    <div class="col-md-5">
+        <img src="{{ asset('assets/img/info1.jpg') }}" alt="" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"/>
     </div>
-
-    <hr class="featurette-divider">
-    <!-- /END THE FEATURETTES -->
+</div>
+<hr class="featurette-divider">
+<div class="row featurette">
+    <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">La lomo, <span class="text-muted">c'est quoi?</span></h2>
+        <p class="lead">A l’ère du numérique et de ses images débordantes de pixels, la raphie est une tendance à contre-courant. Cette forme de photographie argentique tire son nom du Lomo LCA, un appareil photo compact russe produit à Saint-Pétersbourg à partir de 1983.
+        <br/>
+        Il y a donc un brin de nostalgie dans la tendance "lomo" : les lomographes utilisent des appareils vintage et remettent au goût du jour les clichés spontanés, pour ne pas dire hasardeux, où l’on ne peut connaître à l’avance le résultat...</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+        <img src="{{ asset('assets/img/info2.jpg') }}" alt="" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"/>
+    </div>
+</div>
+<hr class="featurette-divider">
+<!-- /END THE FEATURETTES -->
 {% endblock %}

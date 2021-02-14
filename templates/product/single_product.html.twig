@@ -1,6 +1,6 @@
-<div class="product__item-style text-center">
+<div class="text-center mt-5 ">
     <a href="{{ path('product', { 'slug' : product.slug}) }}"><img src="/uploads/{{ product.illustration }}" class="img-fluid" alt="{{ product.name }}"></a>
-    <h4>{{ product.name }}</h4>
-    <span class="product__subtitle">{{ product.subtitle }}</span>
-    <span class="product__price">{{ (product.price /100) | number_format(2, ',', '.') }} €</span>
+    <h4 class="text-uppercase mt-1">{{ product.name }}</h4>
+    <span class="d-block lead mb-4">{{ product.subtitle }}</span>
+    <span class="lead">{{ (product.price /100) | number_format(2, ',', '.') }} €</span>
 </div>
