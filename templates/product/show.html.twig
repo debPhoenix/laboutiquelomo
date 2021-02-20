@@ -14,7 +14,7 @@
             <p class="lead">{{ (product.price /100) | number_format(2, ',', '.') }} €</p>
             <hr>
             <p class="lead">{{ product.description }}</p>
-            <a href="{{ path('add_to_cart', {'id' : product.id})}}" class="btn btn-primary btn-lg mb-5">Ajouter au panier</a>
+            <a href="{{ path('add_to_cart', {'id' : product.id})}}" class="btn btn-success btn-lg mb-5">Ajouter au panier</a>
         </div>
     </div>
     <hr>

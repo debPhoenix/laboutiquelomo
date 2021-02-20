@@ -17,25 +17,14 @@ class ChangePasswordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('lastname', TextType::class, [
-                'disabled' => true,
-                'label' => 'Nom'
-            ])
-
-            ->add('firstname', TextType::class, [
-                'disabled' => true,
-                'label' => 'Prénom'
-            ])
-            ->add('email', EmailType::class, [
-                'disabled' => true,
-                'label' => 'Adresse email'
-            ])
-
             ->add('old_password', PasswordType::class, [
                 'label' => 'Mot de passe actuel',
+                'label_attr'=> [
+                    'class' => 'h5 mt-3'],
                 'mapped' => false,
                 'attr' => [
-                    'placeholder' => 'Veuillez saisir votre mot de passe actuel'
+                    'placeholder' => 'Veuillez saisir votre mot de passe actuel',
+                    'class' => 'h4'
                 ]
             ])
             ->add('new_password', RepeatedType::class, [
@@ -46,19 +35,28 @@ class ChangePasswordType extends AbstractType
                 'required' => true,
                 'first_options' => [
                     'label' => 'Nouveau mot de passe',
+                    'label_attr'=> [
+                    'class' => 'h5 mt-3'],
                     'attr' => [
-                        'placeholder' => 'saisir le nouveau mot de passe'
+                        'placeholder' => 'saisir le nouveau mot de passe',
+                        'class' => 'h4'
                     ]
                 ],
                 'second_options' => [
                     'label' => 'Confirmer le nouveau mot de passe',
+                    'label_attr'=> [
+                        'class' => 'h5 mt-3'],
                     'attr' => [
-                        'placeholder' => 'confirmer le nouveau mot de passe'
+                        'placeholder' => 'confirmer le nouveau mot de passe',
+                        'class' => 'h4'
                     ]
                 ]
             ])
             ->add('submit', SubmitType::class, [
-                'label' => "Mettre à jour"
+                'label' => "Mettre à jour",
+                'attr'=> [
+                    'class' => 'btn-success btn mb-3'
+                ]
             ])
         ;
     }

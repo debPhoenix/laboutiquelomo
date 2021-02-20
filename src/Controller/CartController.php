@@ -19,6 +19,9 @@ class CartController extends AbstractController
     /**
      * @Route("/mon-panier", name="cart")
      */
+
+    //-> je demande le rendu de la vue cart/index.html.twig, avec en paramètre l’objet ‘cart’, qui contient les données reçues de la méthode $cart->getFull()
+    //-> la vue est ensuite chargée d’aller prendre les données contenues dans l’objet ‘cart’ et de les afficher aux emplacements dédiés.
     public function index(Cart $cart)
     {
         return $this->render('cart/index.html.twig', [
@@ -26,10 +29,14 @@ class CartController extends AbstractController
         ]);
     }
 
-
+    //-> route qui permet d’appeler la fonction qui ajoute un article dans le panier, à l’aide de l’identifiant passé en paramètre
     /**
      * @Route("/cart/add/{id}", name="add_to_cart")
      */
+
+    //-> La fonction add reçoit un panier en paramètre + l’identifiant d’un produit.
+    //-> j'appele la fonction add sur le panier reçu en paramètre, en transmettant l’id du produit à ajouter.
+    //-> Ensuite, l’utilisateur sera redirigé par le contrôleur vers la route ‘cart’ qui va afficher la totalité du panier, présentée plus haut.
     public function add(Cart $cart, $id)
     {
         $cart->add($id);

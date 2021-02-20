@@ -5,26 +5,27 @@
 {% block content %}
     <a href="{{ path('account_address_add') }}" class="btn btn-primary btn-sm float-right">Ajouter une adresse</a>
     <h1>Gérer mes adresses</h1>
-    Dans cet espace pour allez pouvoir gérer toutes vos adresses.
+    <hr>
+    <p class="lead">Dans cet espace vous allez pouvoir gérer toutes vos adresses.</p>
     <br/><br/>
     {% if app.user.adresses | length == 0 %}
-        Vous n'avez pas encore ajouté d'adresse à votre compte.<br/>
-        Pour en ajouter une <a href="{{ path('account_address_add') }}">cliquez ici</a>.
+        <p class="lead">Vous n'avez pas encore ajouté d'adresse à votre compte.<br/>
+        Pour en ajouter une <a href="{{ path('account_address_add') }}">cliquez ici</a>.</p>
     {% else %}
         <div class="row">
             {% for adress in app.user.adresses %}
                 <div class="col-md-4 p-1">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">{{ adress.name }}</h5>
-                            <p class="card-text">
+                            <h4 class="card-title">{{ adress.name }}</h4>
+                            <p class="card-text lead">
                                 {{ adress.firstname }} {{ adress.lastname }}<br/>
                                 {{ adress.adress }}<br/>
                                 {{ adress.postal }} {{ adress.city }}<br/>
                                 {{ adress.country }}
                             </p>
-                            <a href="{{ path('account_address_edit', {'id' : adress.id}) }}" class="btn btn-outline-primary btn-sm">Modifier</a> 
-                            <a href="{{ path('account_address_delete', {'id' : adress.id}) }}" class="btn btn-outline-danger btn-sm">Supprimer</a>
+                            <a href="{{ path('account_address_edit', {'id' : adress.id}) }}" class="btn btn-outline-success">Modifier</a> 
+                            <a href="{{ path('account_address_delete', {'id' : adress.id}) }}" class="btn btn-outline-danger">Supprimer</a>
                         </div>
                     </div>
                 </div>
@@ -32,5 +33,5 @@
         </div>
     {% endif %}
     <br/><br/>
-    <a href="{{ path('account') }}">Retourner à mon compte</a><br/>
+    <p class="lead"><a href="{{ path('account') }}">Retourner à mon compte</a></p>
 {% endblock %}

@@ -14,6 +14,9 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CategoryRepository extends ServiceEntityRepository
 {
+
+    //-> constructeur de la méthode, qui s'occupe de l'initialiser et qui précise aussi
+    // le type d'objet dont le repo s'occupe: Category
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Category::class);
@@ -23,6 +26,7 @@ class CategoryRepository extends ServiceEntityRepository
     //  * @return Category[] Returns an array of Category objects
     //  */
     /*
+    //-> requete custom pour interroger de façon plus poussée la DB
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('c')

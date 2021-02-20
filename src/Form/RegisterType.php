@@ -18,20 +18,10 @@ class RegisterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', TextType::class, [
-                'label' => 'Prénom',
-                'constraints' => [
-                    new Length([
-                        'min' => 2,
-                        'max' => 30,
-                    ]),
-                ],
-                'attr' => [
-                    'placeholder' => 'saisir votre prénom'
-                ]
-            ])
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',
+                'label_attr'=> [
+                    'class' => 'h5 mt-3'],
                 'constraints' => [
                     new Length([
                         'min' => 2,
@@ -42,8 +32,24 @@ class RegisterType extends AbstractType
                     'placeholder' => 'saisir votre nom'
                 ]
             ])
+            ->add('firstname', TextType::class, [
+                'label' => 'Prénom',
+                'label_attr'=> [
+                    'class' => 'h5 mt-3'],
+                'constraints' => [
+                    new Length([
+                        'min' => 2,
+                        'max' => 30,
+                    ]),
+                ],
+                'attr' => [
+                    'placeholder' => 'saisir votre prénom'
+                ]
+            ])
             ->add('email', EmailType::class, [
                 'label' => 'Email',
+                'label_attr'=> [
+                    'class' => 'h5 mt-3'],
                 'constraints' => [
                     new Length([
                         'min' => 2,
@@ -62,19 +68,26 @@ class RegisterType extends AbstractType
                 'required' => true,
                 'first_options' => [
                     'label' => 'Mot de passe',
+                    'label_attr'=> [
+                        'class' => 'h5 mt-3'],
                     'attr' => [
                         'placeholder' => 'saisir un mot de passe'
                     ]
                 ],
                 'second_options' => [
                     'label' => 'Confirmer le mot de passe',
+                    'label_attr'=> [
+                        'class' => 'h5 mt-3'],
                     'attr' => [
                         'placeholder' => 'confirmer le mot de passe'
                     ]
                 ]
             ])
             ->add('submit', SubmitType::class, [
-                'label' => "S'enregistrer"
+                'label' => "S'enregistrer",
+                'attr' => [
+                    'class' => 'btn-success btn mb-5'
+                ]
             ])
         ;
     }

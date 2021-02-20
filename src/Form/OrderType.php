@@ -30,7 +30,7 @@ class OrderType extends AbstractType
             ])
 
             ->add('carriers', EntityType::class, [
-                'label' => 'Choisissez votre mode de livraison:',
+                'label' => 'Choix du mode de livraison:',
                 'required' => true,
                 'class' => Carrier::class,
                 'multiple' => false,
