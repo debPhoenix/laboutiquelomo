@@ -1,11 +1,24 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="La boutique Lomo, découvres nos gammes d'appareils de lomographie, des outils photographiques formidables à expérimenter!">
-    <meta name="author" content="Deb Phoenix">
+
     <title>{% block title %}La boutique Lomo{% endblock %}</title>
+    
+    <!-- Metatags -->
+    <meta name="title" content="La boutique Lomo">
+    <meta name="description" content="La boutique Lomo, découvres nos gammes d'appareils de lomographie, des outils photographiques formidables à expérimenter!">
+    <meta name="author" content="Déb Phoenix">
+    <meta name="language" content="fr">
+    <meta name="keywords" content="lomographie, lomo, lomography, photo, argentique, photographie, appareils, optiques, accessoires, pellicules">
+    <meta name="robots" content="index,follow">
+    <meta name="copyright" content="Déb Phoenix">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('assets/img/favicon.ico') }}">
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
