@@ -6,8 +6,6 @@ use App\Entity\Category;
 
 class Search
 {
-
-
     /**
      * @var Category[]
      */
