@@ -34,7 +34,6 @@ body {
 }
 
 
-
 @media screen and (max-width: 767px) {
     .product__item-style h4 {text-align: center;}
     }
@@ -52,7 +51,13 @@ body {
 .form-check {
     background-color: rgb(241, 241, 241);
     padding-left:3em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
     margin-top: 0.5em;
+}
+
+.form-check-label {
+   padding-left: 0;
 }
 
 .col-form-label{
