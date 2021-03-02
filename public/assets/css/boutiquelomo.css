@@ -1,5 +1,10 @@
+/* MAIN STYLE */
 body {
     position: relative;
+}
+
+.navbar__logo {
+    margin-top: 4px;
 }
 
 .navbar__connexion-style, .navbar__connexion-style a {
@@ -28,7 +33,7 @@ body {
     text-decoration: none;
 }
 
-
+/* PRODUCT */
 .product__container{
     margin-bottom: 5em;
 }
@@ -43,6 +48,7 @@ body {
     .mobile-space {margin-top:5em;}
     }
 
+/* CART */
 .panier-style{
     height: 20px;
     padding-right: 20px;
@@ -91,8 +97,4 @@ body {
     border-color:#fff;
     background-color:rgba(0, 0, 0, 0.3);
     color: #fff;
-}
-
-.navbar__logo {
-    margin-top: 4px;
 }

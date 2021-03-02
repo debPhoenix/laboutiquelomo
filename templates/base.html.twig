@@ -25,105 +25,88 @@
     <!-- La boutique lomo CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/boutiquelomo.css') }}">
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
     <!-- Carousel CSS -->
     <link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top align-self-center">
-        <a class="navbar-brand fs-1" href="{{ path('home') }}"><img src="{{ asset('assets/img/logo.svg') }}" height="26px" width="26px" alt=""> LA BOUTIQUE LOMO </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link lead" href="{{ path('products') }}">Nos produits</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link lead" href="#">A propos</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link lead" href="#">Contact</a>
-                </li>
-            </ul>
-            
-            <div class="navbar__connexion-style">
-            <a href="{{ path('cart') }}"><img src="{{ asset('assets/img/panier.svg') }}" alt="Panier" class="panier-style"></a> 
-            {% if app.user %}
-            <a href="{{ path('account') }}" class="lead">Mon compte ({{ app.user.firstname }})</a> ∙ <a href="{{ path('app_logout') }}" class="lead">Déconnexion</a>
-            {% else %}
-            <a href="{{ path('app_login') }}" class="lead">Connexion</a> ∙ <a href="{{ path('register') }}" class="lead">S'inscrire</a>
-            {% endif %}
-            </div>
-        </div>
-    </nav>
-</header>
-
-<main role="main">
-    {% if block('carousel') is defined %}
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-        {% for key,hero in heros %}
-            <li data-target="#myCarousel" data-slide-to={{ key }} {% if key== 0 %}class="active"{% endif %}></li>
-        {% endfor %}
-        </ol>
-        <div class="carousel-inner">
-            {% for key,hero in heros %}
-            <div class="carousel-item {% if key == 0 %}active{% endif %}" style="background: url('/uploads/{{ hero.illustration }}');background-size:cover; ">
-                <div class="container">
-                    <div class="carousel-caption text-left d-md-block">
-                        <h1 class="hero__title-color text-uppercase"><span class="hero__title-background">{{ hero.title }}</span></h1>
-                        <p class="hero__title-color lead text-uppercase fw-bold"><span class="hero__title-background">{{ hero.content }}</span></p>
-                        <p><a class="btn btn-outline btn__hero-style lead" href="{{ hero.btnUrl }}" role="button">{{ hero.btnTitle }}</a></p>
-                    </div>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top align-self-center">
+            <a class="navbar-brand fs-1" href="{{ path('home') }}"><img src="{{ asset('assets/img/logo.svg') }}" height="26px" width="26px" alt=""> LA BOUTIQUE LOMO </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link lead" href="{{ path('products') }}">Nos produits</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link lead" href="#">A propos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link lead" href="#">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar__connexion-style">
+                    <a href="{{ path('cart') }}"><img src="{{ asset('assets/img/panier.svg') }}" alt="Panier" class="panier-style"></a> 
+                    {% if app.user %}
+                        <a href="{{ path('account') }}" class="lead">Mon compte ({{ app.user.firstname }})</a> ∙ <a href="{{ path('app_logout') }}" class="lead">Déconnexion</a>
+                        {% else %}
+                        <a href="{{ path('app_login') }}" class="lead">Connexion</a> ∙ <a href="{{ path('register') }}" class="lead">S'inscrire</a>
+                    {% endif %}
                 </div>
             </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        {% if block('carousel') is defined %}
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+            {% for key,hero in heros %}
+                <li data-target="#myCarousel" data-slide-to={{ key }} {% if key== 0 %}class="active"{% endif %}></li>
             {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+                {% for key,hero in heros %}
+                <div class="carousel-item {% if key == 0 %}active{% endif %}" style="background: url('/uploads/{{ hero.illustration }}');background-size:cover; ">
+                    <div class="container">
+                        <div class="carousel-caption text-left d-md-block">
+                            <h1 class="hero__title-color text-uppercase"><span class="hero__title-background">{{ hero.title }}</span></h1>
+                            <p class="hero__title-color lead text-uppercase fw-bold"><span class="hero__title-background">{{ hero.content }}</span></p>
+                            <p><a class="btn btn-outline btn__hero-style lead" href="{{ hero.btnUrl }}" role="button">{{ hero.btnTitle }}</a></p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Précédent</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Suivant</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Précédent</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Suivant</span>
-        </a>
-    </div>
-    {% endif %}
+        {% endif %}
 
-    <!-- Featurettes
-    ================================================== -->
+        <!-- Featurettes -->
 
-    <div class="container marketing {% if block('carousel') is not defined %}mt-5{% endif %} ">
+        <div class="container marketing {% if block('carousel') is not defined %}mt-5{% endif %} ">
 
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
 
-    </div>
-    <!-- /Featurettes -->
+        </div>
+        <!-- /Featurettes -->
 
     <!-- Footer -->
     <footer class="footer__style fixed-bottom">
         <p>&copy; 2021 <a href="{{ path('home') }}">La boutique Lomo</a> &middot; <a href="#">Mentions légales</a> &middot; <a href="#">GCV</a>
     </footer>
-</main>
+    </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
 </body>
