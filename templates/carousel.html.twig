@@ -1,0 +1,28 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+    {% for key,hero in heros %}
+        <li data-target="#myCarousel" data-slide-to={{ key }} {% if key== 0 %}class="active"{% endif %}></li>
+    {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+        {% for key,hero in heros %}
+        <div class="carousel-item {% if key == 0 %}active{% endif %}" style="background: url('/uploads/{{ hero.illustration }}');background-size:cover; ">
+            <div class="container">
+                <div class="carousel-caption text-left d-md-block">
+                    <h1 class="hero__title-color text-uppercase"><span class="hero__title-background">{{ hero.title }}</span></h1>
+                    <p class="hero__title-color lead text-uppercase fw-bold"><span class="hero__title-background">{{ hero.content }}</span></p>
+                    <p><a class="btn btn-outline btn__hero-style lead" href="{{ hero.btnUrl }}" role="button">{{ hero.btnTitle }}</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Précédent</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Suivant</span>
+    </a>
+ </div>

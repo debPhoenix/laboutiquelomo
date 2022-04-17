@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top align-self-center">
+    <a class="navbar-brand fs-1" href="{{ path('home') }}"><img src="{{ asset('assets/img/logo.svg') }}" height="26px" width="26px" alt=""> LA BOUTIQUE LOMO </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link lead" href="{{ path('products') }}">Nos produits</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link lead" href="#">A propos</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link lead" href="#">Contact</a>
+            </li>
+        </ul>
+
+        <div class="navbar__connexion-style">
+            <a href="{{ path('cart') }}"><img src="{{ asset('assets/img/panier.svg') }}" alt="Panier" class="panier-style"></a>
+            {% if app.user %}
+                <a href="{{ path('account') }}" class="lead">Mon compte ({{ app.user.firstname }})</a> ∙ <a href="{{ path('app_logout') }}" class="lead">Déconnexion</a>
+                {% else %}
+                <a href="{{ path('app_login') }}" class="lead">Connexion</a> ∙ <a href="{{ path('register') }}" class="lead">S'inscrire</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
