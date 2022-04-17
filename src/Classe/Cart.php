@@ -80,14 +80,14 @@ class Cart
     public function getFull()
     {
         // Initialisation d'un tableau vide, qui va etre rempli au fur et à mesure.
-        // cherche dans la session si des lignes représentant des entrées de mon panier sont stockées
-        // Donc pour chaque ligne trouvée, je vais commencer par récupérer les données complètes du  produit en utilisant les méthodes du repository avec la ligne suivante. 
         $cartComplete = [];
 
+        // cherche dans la session si des lignes représentant des entrées de mon panier sont stockées 
         if($this->get()){
             foreach ($this->get() as $id => $quantity) {
 
-                // Réponse de la requête par le biais du repository, renvoie un objet de type Product par son identifiant ($id).
+                // pour chaque ligne trouvée, je récupérer les données complètes du  produit en utilisant les méthodes du repository avec la ligne suivante.
+                // renvoie un objet de type Product par son identifiant ($id).
                 $product_object = $this->entityManager->getRepository(Product::class)->findOneById($id);
   
                 if (!$product_object) {

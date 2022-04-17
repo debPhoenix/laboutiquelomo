@@ -49,6 +49,7 @@ class ProductController extends AbstractController
         $product = $this->entityManager->getRepository( Product::class)->findOneBySlug($slug);
         $products = $this->entityManager->getRepository(Product::class)->findByIsBest(1);
 
+        // si le produit n'est pas trouvé redirection vers produits
         if (!$product){
             return $this->redirectToRoute('products');
         }
